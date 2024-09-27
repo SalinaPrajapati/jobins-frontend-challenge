@@ -1,13 +1,13 @@
 <template>
   <div>
-    <ListProductTable></ListProductTable>
+    <add-product-form></add-product-form>
   </div>
 </template>
 <script>
-import ListProductTable from '@/components/product/ListProductTable.vue';
+import AddProductForm from '@/components/product/AddProductForm.vue';
 export default{
     components: {
-        ListProductTable
+      AddProductForm
     }
 }
 </script>

@@ -22,7 +22,7 @@
           </div>
         </div>
         <div
-          class="text-gray-600 mb-4 flex gap-1 items-center bg-white p-3 rounded-2xl w-48 justify-between"
+          class="text-gray-600 mb-4 flex gap-1 items-center bg-white p-3 rounded-2xl w-48 justify-between text-sm"
         >
           Filter by data range<Icon icon="mdi:arrow-down-drop" class="w-6 h-6" />
         </div>

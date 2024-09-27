@@ -1,7 +1,7 @@
 <template>
   <div class="w-full rounded-2xl shadow-md bg-white px-6 py-4">
     <div class="flex w-full justify-between items-center gap-4">
-      <div class="grid grid-cols-2">
+      <div class="flex items-center gap-3">
         <div class="w-16">
           <img
             :src="require('@/assets/images/user-default.png')"
@@ -10,8 +10,8 @@
           />
         </div>
         <div>
-          <p>Robert Fox</p>
-          <p>robertfox@gmail.com</p>
+          <p class="font-semibold">Robert Fox</p>
+          <p class="text-gray-500">robertfox@gmail.com</p>
         </div>
       </div>
       <div>
