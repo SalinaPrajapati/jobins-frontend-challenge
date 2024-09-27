@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-blue-100 font-poppins">
+  <div class="my-component font-poppins">
     <default-layout>
       <router-view></router-view>
     </default-layout>
@@ -14,4 +14,10 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+$primary-color: #d4e6f1;
+
+.my-component {
+  background-color: $primary-color;
+}
+</style>
