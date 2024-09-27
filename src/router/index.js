@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import DashboardItem from "@/views/dashboard/DashboardItem.vue";
-import ManagementItem from "@/views/management /ManagementItem.vue";
+import ManagementItem from "@/views/management/ManagementItem.vue";
 import BrandView from "@/views/brands/BrandView.vue";
 
 const routes = [
   {
-    path: "/dashboard",
+    path: "/",
     name: "dashboard",
     component: DashboardItem,
   },

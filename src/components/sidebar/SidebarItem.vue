@@ -92,7 +92,6 @@ export default {
   created() {
     this.drawerItems = sideMenu;
     this.productItems = productMenu
-    console.log(this.productItems)
   }
 };
 </script>
