@@ -1,8 +1,11 @@
 <template>
-  <div class="flex flex-col gap-10">
-    <OverviewStats></OverviewStats>
-    <OverviewInformation></OverviewInformation>
-    <OverviewTable></OverviewTable>
+  <div>
+    <h3 class="font-semibold mb-3">Dashboard</h3>
+    <div class="flex flex-col gap-10">
+      <OverviewStats></OverviewStats>
+      <OverviewInformation></OverviewInformation>
+      <OverviewTable></OverviewTable>
+    </div>
   </div>
 </template>
 <script>

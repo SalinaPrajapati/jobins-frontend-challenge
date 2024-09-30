@@ -1,11 +1,14 @@
 <template>
-  <div class="grid grid-cols-3 gap-3">
-    <CardItem
-      v-for="(card, index) in cards"
-      :key="index"
-      :title="card.title"
-      :description="card.description"
-    />
+  <div>
+    <h3 class="font-semibold mb-3">Other Management</h3>
+    <div class="grid grid-cols-3 gap-3">
+      <CardItem
+        v-for="(card, index) in cards"
+        :key="index"
+        :title="card.title"
+        :description="card.description"
+      />
+    </div>
   </div>
 </template>
 
