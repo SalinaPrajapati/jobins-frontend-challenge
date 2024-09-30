@@ -36,26 +36,22 @@
         <tr class="bg-gray-100 font-light text-gray-600 rounded-2xl">
           <th class="py-2 px-4">ID.</th>
           <th class="py-2 px-4">Name</th>
-          <th class="py-2 px-4">Date</th>
-          <th class="py-2 px-4">Address</th>
-          <th class="py-2 px-4">Methods</th>
-          <th class="py-2 px-4">Status</th>
+          <th class="py-2 px-4">Category</th>
+          <th class="py-2 px-4">Brand</th>
+          <th class="py-2 px-4">Price</th>
+          <th class="py-2 px-4">Rating</th>
           <th class="py-2 px-4">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="(category, index) in categories"
-          :key="index"
-          class="text-center"
-        >
-          <td class="py-2 px-4 border">{{ category.id }}</td>
-          <td class="py-2 px-4 border">{{ category.title }}</td>
-          <td class="py-2 px-4 border">{{ category.title }}</td>
-          <td class="py-2 px-4 border">{{ category.title }}</td>
-          <td class="py-2 px-4 border">{{ category.title }}</td>
-          <td class="py-2 px-4 border">{{ category.title }}</td>
-          <td class="py-2 px-4 border">{{ category.title }}</td>
+        <tr v-for="(category, index) in categories" :key="index">
+          <td class="p-4 border">{{ category.id }}</td>
+          <td class="p-4 border">{{ category.title }}</td>
+          <td class="p-4 border">{{ category.category }}</td>
+          <td class="p-4 border">{{ category.brand }}</td>
+          <td class="p-4 border">{{ category.price }}</td>
+          <td class="p-4 border">{{ category.rating }}</td>
+          <td class="p-4 border text-sm text-blue-500">View button</td>
         </tr>
       </tbody>
     </table>
@@ -74,11 +70,10 @@ export default {
   },
   methods: {
     getProductlist(){
-        fetch('https://dummyjson.com/products/')
+        fetch('https://dummyjson.com/products?limit=10')
       .then((response) => response.json())
       .then((data) => {
         this.categories = data.products;
-        console.log(this.categories)
       })
       .catch((error) => {
         console.error('Error fetching categories:', error);

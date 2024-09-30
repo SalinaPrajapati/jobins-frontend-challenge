@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 w-full gap-3">
+  <div class="grid grid-cols-3 w-full gap-4">
     <div class="w-full p-2 bg-white shadow-lg rounded-2xl">
       <div class="flex items-center gap-2">
         <div class="w-[30%]">

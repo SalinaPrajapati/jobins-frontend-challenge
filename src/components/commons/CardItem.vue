@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-sm rounded overflow-hidden shadow-md bg-white">
+  <div class="rounded overflow-hidden shadow-md bg-white">
     <img
       v-if="image"
       :src="image"

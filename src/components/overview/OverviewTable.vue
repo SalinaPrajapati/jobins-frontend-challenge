@@ -89,7 +89,6 @@ export default {
       .then((response) => response.json())
       .then((data) => {
         this.users = data.users;
-        console.log(this.users)
       })
       .catch((error) => {
         console.error('Error fetching categories:', error);
