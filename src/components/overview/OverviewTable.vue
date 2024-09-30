@@ -24,10 +24,14 @@
         <div
           class="text-gray-600 mb-4 flex gap-1 items-center bg-white p-3 rounded-2xl w-48 justify-between text-sm"
         >
-          Filter by data range<Icon icon="mdi:arrow-down-drop" class="w-6 h-6" />
+          Filter by data range<Icon
+            icon="mdi:arrow-down-drop"
+            class="w-6 h-6"
+          />
         </div>
       </div>
     </div>
+
     <table class="min-w-full bg-white rounded-2xl">
       <thead class="rounded-2xl font-light">
         <tr class="bg-gray-100 font-light text-gray-600 rounded-2xl">
@@ -42,7 +46,7 @@
       </thead>
       <tbody>
         <tr
-          v-for="(user, index) in users"
+          v-for="(user, index) in paginatedUsers"
           :key="index"
           class="text-sm text-center"
         >
@@ -51,8 +55,7 @@
             <div class="flex flex-col justify-start">
               <p class="font-semibold text-gray-600">{{ user.firstName }}</p>
               <p class="text-xs">
-                {{ user.company.department
-                }}
+                {{ user.company.department }}
               </p>
             </div>
           </td>
@@ -66,6 +69,24 @@
         </tr>
       </tbody>
     </table>
+
+    <div class="flex justify-between mt-4 bg-white p-3 rounded-2xl">
+      <button
+        @click="prevPage"
+        :disabled="currentPage === 1"
+        class="p-2 bg-gray-200 rounded-lg"
+      >
+        Previous
+      </button>
+      <span> Page {{ currentPage }} of {{ totalPages }} </span>
+      <button
+        @click="nextPage"
+        :disabled="currentPage === totalPages"
+        class="p-2 bg-gray-200 rounded-lg"
+      >
+        Next
+      </button>
+    </div>
   </div>
 </template>
 
@@ -78,23 +99,49 @@ export default {
   data() {
     return {
       users: [],
+      currentPage: 1,
+      pageSize: 5,
+      totalUsers: 0, 
     };
   },
-  created(){
+  computed: {
+    totalPages() {
+      return Math.ceil(this.totalUsers / this.pageSize);
+    },
+    paginatedUsers() {
+      const start = (this.currentPage - 1) * this.pageSize;
+      return this.users.slice(start, start + this.pageSize);
+    }
+  },
+  created() {
     this.getUsers();
   },
-  methods : {
-    getUsers(){
-      fetch('https://dummyjson.com/users?limit=10')
-      .then((response) => response.json())
-      .then((data) => {
-        this.users = data.users;
-      })
-      .catch((error) => {
-        console.error('Error fetching categories:', error);
-      });
-    }
-
+  methods: {
+    getUsers() {
+      fetch('https://dummyjson.com/users?limit=20')
+        .then((response) => response.json())
+        .then((data) => {
+          this.users = data.users;
+          this.totalUsers = data.users.length; 
+        })
+        .catch((error) => {
+          console.error('Error fetching users:', error);
+        });
+    },
+    nextPage() {
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++;
+      }
+    },
+    prevPage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
+    },
   },
 };
 </script>
+
+<style scoped>
+/* Add any necessary styles for the pagination buttons */
+</style>
