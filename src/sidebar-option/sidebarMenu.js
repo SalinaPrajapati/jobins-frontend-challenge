@@ -14,18 +14,5 @@ const sideMenu = [
     to: { name: "brands" },
     icon: "typcn:star-outline",
   },
-
-  // {
-  //   action: "Settings",
-  //   title: "Settings",
-  //   icon: "mdi:view-dashboard-outline",
-  //   children: [
-  //     {
-  //       title: "Commons",
-  //       to: { name: "settings" },
-  //       icon: "mdi:view-dashboard-outline",
-  //     },
-  //   ],
-  // },
 ];
 export default sideMenu;
