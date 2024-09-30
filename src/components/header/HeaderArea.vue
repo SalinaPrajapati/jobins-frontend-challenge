@@ -1,7 +1,7 @@
 <template>
     <header class="bg-white">
       <nav
-        class="flex items-center w-full justify-end p-3 lg:px-8"
+        class="flex items-center justify-end p-3 lg:px-8"
         aria-label="Global"
       >
         <div class="hidden lg:flex justify-end">

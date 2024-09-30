@@ -7,7 +7,7 @@
           <router-link
             v-if="menu.to"
             :to="menu.to"
-            class="flex items-center px-2 py-3 cursor-pointer hover:bg-gray-200 rounded-2xl"
+            class="flex items-center px-2 py-3 space-x-3 cursor-pointer hover:bg-gray-200 rounded-2xl"
             :class="isOpen? 'w-full' : 'w-fit'"
             active-class="bg-gray-300"
           >
