@@ -36,11 +36,7 @@
       <div class="flex flex-col gap-2 item-s-center">
         <div class="flex items-center gap-5">
           <div>
-            <img
-              :src="require('@/assets/images/user-default.png')"
-              alt="Avatar"
-              class="object-cover w-16 h-16 p-1 bg-white "
-            />
+            <Icon icon="emojione-v1:stock-chart" class="w-16 h-16" />
           </div>
           <div>
             <p class="text-md font-semibold text-gray-700">Total Profit</p>
